@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhash Jha | Research Scientist</title>
+    <style>
+        :root {
+            /* Theme Colors - GitHub Dark Mode Palette */
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff; 
+            --highlight-color: #238636; 
+            --border-color: #30363d;
+            --font-mono: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-mono);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Layout & Typography */
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .affiliation {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent-color);
+        }
+
+        a:hover {
+            background-color: rgba(88, 166, 255, 0.1);
+        }
+
+        /* Command Line Aesthetic elements */
+        .cmd-prompt::before {
+            content: "> ";
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: var(--highlight-color);
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: "* ";
+            color: var(--highlight-color);
+        }
+
+        /* Publication Box */
+        .pub-item {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            transition: border-color 0.2s;
+        }
+
+        .pub-item:hover {
+            border-color: var(--accent-color);
+        }
+
+        .pub-title {
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .pub-meta {
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+
+        /* --- NEW CSS FOR AUTHOR TOGGLE --- */
+        .author-hidden {
+            display: none; /* Hides extra authors by default */
+        }
+
+        .author-btn {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            padding: 0;
+            margin-left: 5px;
+        }
+
+        .author-btn:hover {
+            text-decoration: underline;
+        }
+        /* -------------------------------- */
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: #8b949e;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Abhash Jha<span class="cursor"></span></h1>
+        <div class="subtitle">Research Scientist</div>
+        <div class="affiliation">ELLIS Institute Tübingen</div>
+    </header>
+
+    <section>
+        <h2 class="cmd-prompt">About</h2>
+        <p>
+            Hi, I'm Abhash. I am currently a Research Scientist at the <strong>ELLIS Institute Tübingen</strong>, contributing to the <strong>OpenEuroLLM</strong> project. 
+        </p>
+        <p>
+            Previously, I completed my Masters in Informatik at the <strong>University of Freiburg</strong>. During my studies, I worked at the Machine Learning Lab under Frank Hutter, focusing on Neural Architecture Search (NAS) and AutoML.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="cmd-prompt">Research Interests</h2>
+        <p>My work sits at the intersection of efficient machine learning and Large Language Models:</p>
+        <ul>
+            <li><strong>AutoML & NAS:</strong> Specifically focusing on differentiable NAS.</li>
+            <li><strong>LLM Efficiency:</strong> Exploring resource-efficient pre-training and post-training pipelines.</li>
+            <li><strong>Alignment & Safety:</strong> Working on post-training alignment to make LLMs robust.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="cmd-prompt">Selected Publications</h2>
+        
+        <div class="pub-item">
+            <span class="pub-title">Large Scale Efficient Training for Open European LLMs</span>
+            <div class="pub-meta">
+                <span>Abhash Jha, Frank Hutter, Author Three</span>
+                
+                <span id="authors-1" class="author-hidden">, Author Four, Author Five, Author Six, Author Seven, Author Eight</span>
+                
+                <button class="author-btn" onclick="toggleAuthors('authors-1', this)">[+5 authors]</button>
+                
+                <br>
+                <em>Conference on Neural Information Processing Systems (NeurIPS), 2025</em><br>
+                <a href="#">[PDF]</a> <a href="#">[Code]</a>
+            </div>
+        </div>
+
+      <div class="pub-item">
+            <span class="pub-title"><code>confopt</code>: A Library for Implementation and Evaluation of Gradient-based One-Shot
+NAS Methods</span>
+            <div class="pub-meta">
+                <span>Abhash Kumar Jha, Shakiba Moradian, Arjun Krishnakumar, </span>
+                <span id="authors-1" class="author-hidden">Martin Rapp, Frank Hutter</span>
+                <button class="author-btn" onclick="toggleAuthors('authors-1', this)">[+2 authors]</button>
+                <br>
+                <em>AutoML Conference (ABCD Track)</em><br>
+                <a href="https://arxiv.org/pdf/2507.16533">[Preprint]</a> <a href="https://github.com/automl/ConfigurableOptimizer">[Code]</a>
+            </div>
+        </div>
+
+      <div class="pub-item">
+            <span class="pub-title">LoRA-DARTS: Low Rank Adaptation for Differentiable Architecture Search</span>
+            <div class="pub-meta">
+                <span>Arjun Krishnakumar, Abhash Kumar Jha, Shakiba Moradian</span>
+                
+                <span id="authors-2" class="author-hidden">Martin Rapp, Frank Hutter</span>
+                
+                <button class="author-btn" onclick="toggleAuthors('authors-2', this)">[+2 authors]</button>
+                
+                <br>
+                <em>AutoML Conference (Workshop Track)</em><br>
+                <a href="https://openreview.net/pdf?id=YNyTumD0U9">[Preprint]</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <h2 class="cmd-prompt">Contact & Connect</h2>
+        <ul>
+            <li>Email: <a href="mailto:abhash.kumar.jha@tue.ellis.eu">abhash.kumar.jha@tue.ellis.eu</a></li>
+            <li>GitHub: <a href="https://github.com/abhash-er">github.com/abhash-er</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Abhash Jha</p>
+    </footer>
+
+    <script>
+        function toggleAuthors(id, btn) {
+            var hiddenSpan = document.getElementById(id);
+            if (hiddenSpan.style.display === "none" || hiddenSpan.style.display === "") {
+                hiddenSpan.style.display = "inline"; // Show the authors
+                btn.style.display = "none";          // Hide the button after clicking
+            }
+        }
+    </script>
+
+</body>
+</html>
